@@ -49,6 +49,42 @@
       "detail": "",
       "at": "2026-11-08T17:55:46Z",
       "note": ""
+    },
+    {
+      "key": "ed2:apply",
+      "method": "apply",
+      "from": "0x6486709E5eF732dF850DC4C2Ae46F615B588511E",
+      "ok": true,
+      "hash": "0xe27bc6a204db5e955641c15bab0972e56a09177f117a6fcb5f89c73addbf70e9",
+      "returned": 17,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T18:57:41Z",
+      "note": ""
+    },
+    {
+      "key": "ed2:submit",
+      "method": "submit",
+      "from": "0x6486709E5eF732dF850DC4C2Ae46F615B588511E",
+      "ok": true,
+      "hash": "0x12a1038e9038d713a37978c76036339db519002896862bcfe5d3d16e8f3710c3",
+      "returned": 17,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T18:57:50Z",
+      "note": ""
+    },
+    {
+      "key": "ed2:judge",
+      "method": "judge",
+      "from": "0x6486709E5eF732dF850DC4C2Ae46F615B588511E",
+      "ok": true,
+      "hash": "0xa2d3a5c9d3ec5ac9ed8e7ccbbee97d42238359287ccbce46db3c19668f3f3be0",
+      "returned": 17,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T18:58:05Z",
+      "note": ""
     }
   ],
   "gates": {
@@ -68,6 +104,21 @@
       ],
       "dealt": [
         7,
+        5,
+        1
+      ],
+      "applicant": "0x6486709E5eF732dF850DC4C2Ae46F615B588511E"
+    },
+    "ed2": {
+      "id": 17,
+      "status": "RETRY",
+      "labels": [
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "dealt": [
+        0,
         5,
         1
       ],

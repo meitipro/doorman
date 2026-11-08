@@ -1,0 +1,20 @@
+{
+  "Project name": "Doorman",
+  "Primary tag": "Social",
+  "One-liner": "A gate that checks you read the rules, graded by validators that must agree.",
+  "Description": "Doorman is a reading gate for online communities. A community writes its handbook and a bank of questions with a rubric each. An applicant opens an attempt with a small fee and is dealt three questions drawn from their own address, so neighbours get different ones. They answer in their own words. Validators grade each answer PASS or FAIL against the handbook and rubric and must agree on all three labels. The verdict is computed in contract code from those labels and the pass mark, never by the model. A pass is recorded on chain and returns the fee, a failure sends it to the community pool, and a read-only bot grants the Discord role. Live on Studio Next with golden cases published as they came out.",
+  "Step 1 title": "Open a gate",
+  "Step 1": "Open https://doorman-genlayer.vercel.app/new, select Connect wallet, then Switch network and Get test GEN. Write a handbook and six questions with rubrics, then select Open the gate and confirm in the wallet. Or use gate 4, Kiln Discord, which is already open.",
+  "Step 2 title": "Take the gate",
+  "Step 2": "Open the gate page, select Take this gate, enter a Discord id of 17 to 20 digits, then select Open attempt. The page shows the three questions drawn for your address and checks them against the contract before you sign.",
+  "Step 3 title": "Answer",
+  "Step 3": "Type an answer to each of the three questions in your own words, any language, then select Submit my answers and confirm.",
+  "Step 4 title": "Grade",
+  "Step 4": "Select Grade my answers. The page shows Validators are grading with the transaction link. The attempt page then shows the three labels and PASSED, RETRY, LOCKED or EXPIRED.",
+  "Step 5 title": "Withdraw",
+  "Step 5": "Open Passes and select Withdraw to take back the fee a pass returned. The gate owner withdraws the pool of failed fees the same way.",
+  "Proof": "Walked from three fresh accounts through the live site's own signing code: faucet, open_gate, apply with the exact fee, submit, judge. Attempt 15 PASSED with PASS,PASS,PASS and the fee was credited back; attempt 16 got RETRY with FAIL,FAIL,FAIL and the fee went to the pool. Both withdrawals landed after finality, and a read-only bot in dry run found the pass. To confirm a write, read the leader result in the settling transaction: execution_result SUCCESS, not just ACCEPTED. Golden set: 8 of 10 matched, held-out all FAIL, reported as they came out. 71 of 71 mutants caught.",
+  "Steward note": "Known limits: a pass shows the handbook was understood, not that someone is a unique human. The golden set missed two items, published as they came out. The runtime header differs from earlier projects because the live network rejected the old one the day this was built. The Discord bot is tested against a mock Discord, not a live server. Answers are public, so questions must never ask for personal details.",
+  "Website": "https://doorman-genlayer.vercel.app",
+  "GitHub": "https://github.com/meitipro1/doorman"
+}
