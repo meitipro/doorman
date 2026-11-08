@@ -37,13 +37,14 @@ def main() -> int:
     for name, run in record["runs"].items():
         acc = run["accounts"]
         lines += [
-            f"Run `{name}` against {run['site']}, contract `{run['contract']}` on Studio Next. Two accounts made for the run, "
-            f"with nonce {acc['nonces_at_start']['creator']} and {acc['nonces_at_start']['user']} at the start, so neither had touched the "
+            f"Run `{name}` against {run['site']}, contract `{run['contract']}` on Studio Next. Three accounts made for the run, "
+            f"with nonces {acc['nonces_at_start']['owner']}, {acc['nonces_at_start']['passer']} and {acc['nonces_at_start']['failer']} at the start, so none had touched the "
             "contract. Every write went through `web/lib/genlayer-core.mjs`, the code the browser runs, with a stand-in wallet "
             "(`web/scripts/standin-wallet.mjs`).",
             "",
-            f"- Creator: [`{acc['creator']}`]({EXPLORER}/address/{acc['creator']})",
-            f"- User: [`{acc['user']}`]({EXPLORER}/address/{acc['user']})",
+            f"- Owner: [`{acc['owner']}`]({EXPLORER}/address/{acc['owner']})",
+            f"- Applicant who reads the handbook: [`{acc['passer']}`]({EXPLORER}/address/{acc['passer']})",
+            f"- Applicant who does not: [`{acc['failer']}`]({EXPLORER}/address/{acc['failer']})",
             "",
             "| Step | What happened | Transaction |",
             "|---|---|---|",
@@ -57,12 +58,12 @@ def main() -> int:
                 what = f"`{s['method']}` {'accepted, returned ' + str(s['returned']) if s['ok'] else 'refused: ' + str(s.get('refusal'))}, decided in {s['seconds_to_decision']} s"
                 if s.get("final_status"):
                     what += f", then {s['final_status']}"
-            elif key.startswith("read-"):
-                what = f"read back: request {s.get('request_id', '')} is {s.get('verdict', s.get('status', ''))} {s.get('tier', '')}".rstrip()
-                if s.get("receipt_kind"):
-                    what += f", receipt by the {s['receipt_kind'].lower()}"
-                if s.get("reason"):
-                    what += f". Reason: {s['reason']}"
+            elif key.endswith("-read"):
+                what = f"read back from the contract: attempt {s.get('attempt_id')} is **{s.get('status')}**, labels {','.join(s.get('labels', []))}, fee to {s.get('fee_to') or 'nobody'}"
+            elif key.endswith("-deal-check"):
+                what = f"the browser dealt {s.get('browser')} and the contract dealt {s.get('contract')}: {'the same' if s.get('browser') == s.get('contract') else 'DIFFERENT'}"
+            elif key == "bot":
+                what = "the bot, in dry mode, read the chain: " + ' / '.join(s.get('output', []))[:200]
             elif key.startswith("page-"):
                 what = f"HTTP {s['http']} at {s['url']}: {'shows what the chain holds' if s['ok'] else 'MISSING'}"
             elif key.startswith("balance-"):
@@ -87,7 +88,7 @@ def main() -> int:
                 "| Account | Faucet | Received | Sent | Net fees | Expected | Balance | Result |",
                 "|---|---|---|---|---|---|---|---|",
             ]
-            for who in ("creator", "user"):
+            for who in ("owner", "passer", "failer"):
                 r = rec[who]
                 if r["exact"]:
                     result = "exact to the wei"
@@ -99,14 +100,13 @@ def main() -> int:
                     f"| {who} | {gen(r['faucet'])} | {gen(r['received'])} | {gen(r['sent'])} | {gen(r['fees'])} | {gen(r['expected'])} | "
                     f"{gen(r['actual'])} | {result} |"
                 )
-            if any(rec[w].get("message_fee_consumed", "0") != "0" for w in ("creator", "user")):
+            if any(rec[w].get("message_fee_consumed", "0") != "0" for w in ("owner", "passer", "failer")):
                 lines += [
                     "",
                     "**The one term that does not behave as written.** `withdraw` pays its caller through an External message, "
                     "and its fee accounting lists `message_fee_consumed` of 25,000,000,000,000 wei (0.000025 GEN) inside "
-                    "`paid_fee_value - total_refunded`. The creator's wallet was not charged that amount: the balance is higher than "
-                    "the plain equation by exactly it. The seed's withdrawal shows the same thing (Nara's wallet cost was likewise "
-                    "25,000,000,000,000 wei less than paid minus refunded). Where that budget goes is Studio Next's fee logic; this "
+                    "`paid_fee_value - total_refunded`. The wallet was not charged that amount: the balance is higher than "
+                    "the plain equation by exactly it. Where that budget goes is Studio Next's fee logic; this "
                     "page records what the chain reported and what the wallet shows.",
                 ]
             lines += ["", f"Reconciled {rec['at']}."]

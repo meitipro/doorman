@@ -1,0 +1,33 @@
+faucet-owner: HTTP 409 20 GEN -> 20 GEN This address already holds enough test GEN.
+faucet-passer: HTTP 200 0 GEN -> 20 GEN 
+faucet-failer: HTTP 200 0 GEN -> 20 GEN 
+open-gate: open_gate ok in 8 s  0x5dbad2d48e7b97a3be71aa8aecf90fabe82cb758d9710e7ceec816ba8354f818
+  pass: the browser and the contract both deal Q3 Q5 Q2
+pass-apply: apply ok in 9 s  0xd4405906dad58ec0c38e43c7b7f1b05022dbea4b708c08574d85509f3a358d64
+pass-submit: submit ok in 11 s  0x639f78355952d9abe5a4c2859fddbc5d48e6e163c28c785fcd389ad3dd8d5737
+pass-judge: judge ok in 28 s  0x586ff2b31ce62e2cefda626b21c4ee1a6a47c5ecfee8f3ac05945912ef407383
+  -> PASSED PASS,PASS,PASS (fee to applicant)
+  fail: the browser and the contract both deal Q4 Q2 Q8
+GenLayer RPC error (eth_getTransactionByHash): fetch failed
+fail-apply: apply ok in 32 s  0x7fce4ddf1d6cf58c769e56f5098852317a7b9ef7903ac1f41e69840d45680017
+fail-submit: submit ok in 9 s  0x7a737581112bfa094c4fbde41a0f5da47f90f2815b2c97dd46a088328e1d125f
+GenLayer RPC error (sim_getFeeConfig): fetch failed
+fail-judge: judge ok in 30 s  0xcdcc70d6f148c0f17655193988de3519b40fe235b397cef8b0603a56dc7b2e21
+  -> RETRY FAIL,FAIL,FAIL (fee to pool)
+GenLayer RPC error (eth_getTransactionByHash): fetch failed
+applicant-withdraw: withdraw ok in 21 s  0x9bfb816695c7e6d1399a90ef793a4e8f2f361bb60ab7202b26fc699d36b2410f
+  applicant: 18.99976398099999 GEN -> 19.99963767524999 GEN; owed 1 GEN, fee 0.000151305750002823 GEN; difference 25000000000000 wei
+GenLayer RPC error (eth_getTransactionByHash): fetch failed
+GenLayer RPC error (eth_getTransactionByHash): fetch failed
+owner-withdraw: withdraw ok in 16 s  0x79c1240ee75afd59a460a246843e4018f7f964fe2df6b9adb9ea9ecdc7d3d403
+  owner: 19.999921342249998 GEN -> 20.999795036249992 GEN; owed 1 GEN, fee 0.000151306000002823 GEN; difference 25000000000000 wei
+bot (dry): did not find it: node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOU
+page-gate: HTTP 200 shows it  http://localhost:3210/g/5
+page-pass-attempt: HTTP 200 shows it  http://localhost:3210/a/13
+page-fail-attempt: HTTP 200 shows it  http://localhost:3210/a/14
+
+recorded in docs/reviewer-path.studio-next.json (run rp1)

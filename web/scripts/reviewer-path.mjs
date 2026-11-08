@@ -124,7 +124,8 @@ for (const [who, address] of Object.entries(addr)) {
   });
   const body = await response.json().catch(() => ({}));
   const after = await balanceOf(address);
-  const ok = response.ok && BigInt(body.after ?? 0) > BigInt(body.before ?? 0) && after > 0n;
+  // 409 is the faucet saying the address already holds enough: what the first, timed-out call of an earlier try had paid.
+  const ok = (response.ok && BigInt(body.after ?? 0) > BigInt(body.before ?? 0) && after > 0n) || (response.status === 409 && after >= 10n * GEN);
   note({ key, ok, http: response.status, sent_address: address.toLowerCase(), answered_address: body.address, before: body.before, after: body.after, read_after: after.toString(), error: body.error });
   console.log(`${key}: HTTP ${response.status} ${fmt(BigInt(body.before ?? 0))} -> ${fmt(after)} ${body.error ?? ''}`);
   if (!ok) throw new Error(`${key} did not fund ${address}`);

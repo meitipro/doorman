@@ -1,0 +1,358 @@
+{
+  "runs": {
+    "rp1": {
+      "site": "http://localhost:3210",
+      "contract": "0xEEE15be43F84CF00c4799E5e776156055AAbd229",
+      "started": "2026-11-08T18:10:34.100Z",
+      "steps": [
+        {
+          "at": "2026-11-08T18:11:16.031Z",
+          "key": "faucet-owner",
+          "ok": false,
+          "http": 429,
+          "sent_address": "0xb1bf9731e9faa69c16f03c7586e3648bc2150161",
+          "read_after": "20000000000000000000",
+          "error": "This address was funded a few minutes ago. Try again later."
+        },
+        {
+          "at": "2026-11-08T18:12:42.039Z",
+          "key": "faucet-owner",
+          "ok": true,
+          "http": 409,
+          "sent_address": "0xb1bf9731e9faa69c16f03c7586e3648bc2150161",
+          "before": "20000000000000000000",
+          "after": "20000000000000000000",
+          "read_after": "20000000000000000000",
+          "error": "This address already holds enough test GEN."
+        },
+        {
+          "at": "2026-11-08T18:12:47.801Z",
+          "key": "faucet-passer",
+          "ok": true,
+          "http": 200,
+          "sent_address": "0xce7374a60f5495d5cb0c7108dde416fb847a03cc",
+          "answered_address": "0xCe7374A60F5495d5cB0C7108DDe416FB847a03Cc",
+          "before": "0",
+          "after": "20000000000000000000",
+          "read_after": "20000000000000000000"
+        },
+        {
+          "at": "2026-11-08T18:12:51.219Z",
+          "key": "faucet-failer",
+          "ok": true,
+          "http": 200,
+          "sent_address": "0x141177975ddf307854305e7616640fde2f5b7dc4",
+          "answered_address": "0x141177975dDf307854305E7616640fDe2F5B7Dc4",
+          "before": "0",
+          "after": "20000000000000000000",
+          "read_after": "20000000000000000000"
+        },
+        {
+          "at": "2026-11-08T18:12:59.268Z",
+          "key": "open-gate",
+          "method": "open_gate",
+          "account": "review_owner_rp1",
+          "from": "0xB1BF9731E9FaA69C16F03C7586e3648bC2150161",
+          "args": [
+            "Reviewer path rp1: Kiln",
+            "KILN COMMUNITY HANDBOOK\n\nKiln is a community for people b...",
+            "[{\"q\":\"What does rule 2 ask you to do before posting a li...",
+            2,
+            "1000000000000000000",
+            10,
+            1
+          ],
+          "value": "0",
+          "hash": "0x5dbad2d48e7b97a3be71aa8aecf90fabe82cb758d9710e7ceec816ba8354f818",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 5,
+          "refusal": null,
+          "seconds_to_decision": 8
+        },
+        {
+          "at": "2026-11-08T18:13:00.643Z",
+          "key": "pass-deal-check",
+          "ok": true,
+          "browser": [
+            2,
+            4,
+            1
+          ],
+          "contract": [
+            2,
+            4,
+            1
+          ]
+        },
+        {
+          "at": "2026-11-08T18:13:09.832Z",
+          "key": "pass-apply",
+          "method": "apply",
+          "account": "review_pass_rp1",
+          "from": "0xCe7374A60F5495d5cB0C7108DDe416FB847a03Cc",
+          "args": [
+            5,
+            "100000000000000011"
+          ],
+          "value": "1000000000000000000",
+          "hash": "0xd4405906dad58ec0c38e43c7b7f1b05022dbea4b708c08574d85509f3a358d64",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 13,
+          "refusal": null,
+          "seconds_to_decision": 9
+        },
+        {
+          "at": "2026-11-08T18:13:22.563Z",
+          "key": "pass-submit",
+          "method": "submit",
+          "account": "review_pass_rp1",
+          "from": "0xCe7374A60F5495d5cB0C7108DDe416FB847a03Cc",
+          "args": [
+            13,
+            "[\"In #feedback, with the steps to reproduce and what you ..."
+          ],
+          "value": "0",
+          "hash": "0x639f78355952d9abe5a4c2859fddbc5d48e6e163c28c785fcd389ad3dd8d5737",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 13,
+          "refusal": null,
+          "seconds_to_decision": 11
+        },
+        {
+          "at": "2026-11-08T18:13:50.853Z",
+          "key": "pass-judge",
+          "method": "judge",
+          "account": "review_pass_rp1",
+          "from": "0xCe7374A60F5495d5cB0C7108DDe416FB847a03Cc",
+          "args": [
+            13
+          ],
+          "value": "0",
+          "hash": "0x586ff2b31ce62e2cefda626b21c4ee1a6a47c5ecfee8f3ac05945912ef407383",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 13,
+          "refusal": null,
+          "seconds_to_decision": 28
+        },
+        {
+          "at": "2026-11-08T18:13:51.418Z",
+          "key": "pass-read",
+          "ok": true,
+          "attempt_id": 13,
+          "status": "PASSED",
+          "labels": [
+            "PASS",
+            "PASS",
+            "PASS"
+          ],
+          "dealt": [
+            2,
+            4,
+            1
+          ],
+          "fee_to": "applicant"
+        },
+        {
+          "at": "2026-11-08T18:13:53.573Z",
+          "key": "fail-deal-check",
+          "ok": true,
+          "browser": [
+            3,
+            1,
+            7
+          ],
+          "contract": [
+            3,
+            1,
+            7
+          ]
+        },
+        {
+          "at": "2026-11-08T18:14:25.990Z",
+          "key": "fail-apply",
+          "method": "apply",
+          "account": "review_fail_rp1",
+          "from": "0x141177975dDf307854305E7616640fDe2F5B7Dc4",
+          "args": [
+            5,
+            "100000000000000012"
+          ],
+          "value": "1000000000000000000",
+          "hash": "0x7fce4ddf1d6cf58c769e56f5098852317a7b9ef7903ac1f41e69840d45680017",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 14,
+          "refusal": null,
+          "seconds_to_decision": 32
+        },
+        {
+          "at": "2026-11-08T18:14:36.003Z",
+          "key": "fail-submit",
+          "method": "submit",
+          "account": "review_fail_rp1",
+          "from": "0x141177975dDf307854305E7616640fDe2F5B7Dc4",
+          "args": [
+            14,
+            "[\"Being annoying.\",\"Because prices go up.\",\"Complain loud..."
+          ],
+          "value": "0",
+          "hash": "0x7a737581112bfa094c4fbde41a0f5da47f90f2815b2c97dd46a088328e1d125f",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 14,
+          "refusal": null,
+          "seconds_to_decision": 9
+        },
+        {
+          "at": "2026-11-08T18:15:06.180Z",
+          "key": "fail-judge",
+          "method": "judge",
+          "account": "review_fail_rp1",
+          "from": "0x141177975dDf307854305E7616640fDe2F5B7Dc4",
+          "args": [
+            14
+          ],
+          "value": "0",
+          "hash": "0xcdcc70d6f148c0f17655193988de3519b40fe235b397cef8b0603a56dc7b2e21",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 14,
+          "refusal": null,
+          "seconds_to_decision": 30
+        },
+        {
+          "at": "2026-11-08T18:15:08.050Z",
+          "key": "fail-read",
+          "ok": true,
+          "attempt_id": 14,
+          "status": "RETRY",
+          "labels": [
+            "FAIL",
+            "FAIL",
+            "FAIL"
+          ],
+          "dealt": [
+            3,
+            1,
+            7
+          ],
+          "fee_to": "pool"
+        },
+        {
+          "at": "2026-11-08T18:15:51.232Z",
+          "key": "applicant-withdraw",
+          "method": "withdraw",
+          "account": "review_pass_rp1",
+          "from": "0xCe7374A60F5495d5cB0C7108DDe416FB847a03Cc",
+          "args": [],
+          "value": "0",
+          "hash": "0x9bfb816695c7e6d1399a90ef793a4e8f2f361bb60ab7202b26fc699d36b2410f",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 1000000000000000000,
+          "refusal": null,
+          "seconds_to_decision": 21,
+          "final_status": "FINALIZED"
+        },
+        {
+          "at": "2026-11-08T18:15:52.785Z",
+          "key": "balance-applicant",
+          "ok": false,
+          "owed": "1000000000000000000",
+          "before": "18999763980999991531",
+          "after": "19999637675249988708",
+          "net_fee": "151305750002823",
+          "expected": "19999612675249988708",
+          "difference": "25000000000000"
+        },
+        {
+          "at": "2026-11-08T18:16:49.012Z",
+          "key": "owner-withdraw",
+          "method": "withdraw",
+          "account": "review_owner_rp1",
+          "from": "0xB1BF9731E9FaA69C16F03C7586e3648bC2150161",
+          "args": [],
+          "value": "0",
+          "hash": "0x79c1240ee75afd59a460a246843e4018f7f964fe2df6b9adb9ea9ecdc7d3d403",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 1000000000000000000,
+          "refusal": null,
+          "seconds_to_decision": 16,
+          "final_status": "FINALIZED"
+        },
+        {
+          "at": "2026-11-08T18:16:50.514Z",
+          "key": "balance-owner",
+          "ok": false,
+          "owed": "1000000000000000000",
+          "before": "19999921342249997177",
+          "after": "20999795036249994354",
+          "net_fee": "151306000002823",
+          "expected": "20999770036249994354",
+          "difference": "25000000000000"
+        },
+        {
+          "at": "2026-11-08T18:16:52.189Z",
+          "key": "page-gate",
+          "ok": true,
+          "url": "http://localhost:3210/g/5",
+          "http": 200
+        },
+        {
+          "at": "2026-11-08T18:16:52.792Z",
+          "key": "page-pass-attempt",
+          "ok": true,
+          "url": "http://localhost:3210/a/13",
+          "http": 200
+        },
+        {
+          "at": "2026-11-08T18:16:53.657Z",
+          "key": "page-fail-attempt",
+          "ok": true,
+          "url": "http://localhost:3210/a/14",
+          "http": 200
+        },
+        {
+          "at": "2026-11-08T18:18:22.112Z",
+          "key": "bot",
+          "ok": true,
+          "output": [
+            "2026-11-08T18:18:21.017Z attempt 13: role granted to 100000000000000011 (dry run)"
+          ]
+        }
+      ],
+      "accounts": {
+        "owner": "0xB1BF9731E9FaA69C16F03C7586e3648bC2150161",
+        "passer": "0xCe7374A60F5495d5cB0C7108DDe416FB847a03Cc",
+        "failer": "0x141177975dDf307854305E7616640fDe2F5B7Dc4",
+        "nonces_at_start": {
+          "owner": 0,
+          "passer": 0,
+          "failer": 0
+        }
+      },
+      "finished": "2026-11-08T18:18:22.113Z",
+      "earlier_failed_steps": [
+        {
+          "key": "bot",
+          "why": "bot/ had no node_modules installed; rerun after npm install",
+          "at": "2026-11-08T18:16:50.578Z"
+        }
+      ]
+    }
+  }
+}
