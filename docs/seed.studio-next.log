@@ -1,0 +1,42 @@
+  0x4B8a480F 0.00 -> 1000.00 GEN
+  0xEdE90DEd 0.00 -> 1000.00 GEN
+  0xE79DFdE4 0.00 -> 1000.00 GEN
+  0x0BB146F0 0.00 -> 1000.00 GEN
+  0x1B702dd3 0.00 -> 1000.00 GEN
+  open_gate 0x04bd0c8853787c354ef369a1717d790cce9450b8f7257950a008f1f012365279
+kiln:open_gate: ok https://explorer-studio-dev.genlayer.com/tx/0x04bd0c8853787c354ef369a1717d790cce9450b8f7257950a008f1f012365279
+  apply 0x80c61785dec18340f18a7037ddb1946c4c80f58e6367def2b80cd5d3a7b075a5
+ada:apply: ok https://explorer-studio-dev.genlayer.com/tx/0x80c61785dec18340f18a7037ddb1946c4c80f58e6367def2b80cd5d3a7b075a5
+  submit 0x663f140f40676df4f78171d42dc5f7a3444c7e9889475b7b0faf8f2bb226120d
+ada:submit: ok https://explorer-studio-dev.genlayer.com/tx/0x663f140f40676df4f78171d42dc5f7a3444c7e9889475b7b0faf8f2bb226120d
+  judge 0x3e7868685199298f4477d8f6605538a107a956f8b55ba4588664130bcd888a49
+ada:judge: ok https://explorer-studio-dev.genlayer.com/tx/0x3e7868685199298f4477d8f6605538a107a956f8b55ba4588664130bcd888a49
+  ada: attempt 9 -> PASSED ['PASS', 'PASS', 'PASS']
+  apply 0x595c95688dc29675c047026bbc2f6bf379f2e188ec2cab798696e30f9fd899a8
+dee:apply: ok https://explorer-studio-dev.genlayer.com/tx/0x595c95688dc29675c047026bbc2f6bf379f2e188ec2cab798696e30f9fd899a8
+  submit 0x6e03dd0321c77634d813e699ff2d4a99da0d893c4e3e066e1fe119666f8510b8
+dee:submit: ok https://explorer-studio-dev.genlayer.com/tx/0x6e03dd0321c77634d813e699ff2d4a99da0d893c4e3e066e1fe119666f8510b8
+  judge 0x287928ba2ce8ef0bd3425d96a1338e41fce5cb84064fb5161d218637a205fc83
+dee:judge: ok https://explorer-studio-dev.genlayer.com/tx/0x287928ba2ce8ef0bd3425d96a1338e41fce5cb84064fb5161d218637a205fc83
+  dee: attempt 10 -> PASSED ['PASS', 'PASS', 'PASS']
+  apply 0x35ad94e8310d6f2d084b15730ecbbb1698e939d64e98b08294273fefe4040606
+bo:apply: ok https://explorer-studio-dev.genlayer.com/tx/0x35ad94e8310d6f2d084b15730ecbbb1698e939d64e98b08294273fefe4040606
+  submit 0xd1606051d61c03da8f0dfc8c5be9c80a5d5aa31ca01c113c14ef4d0958be20d1
+bo:submit: ok https://explorer-studio-dev.genlayer.com/tx/0xd1606051d61c03da8f0dfc8c5be9c80a5d5aa31ca01c113c14ef4d0958be20d1
+  judge 0x579803188415b8f77c27a61f08179abb8cdc2d39887a8d1f3c87393bce12753f
+bo:judge: ok https://explorer-studio-dev.genlayer.com/tx/0x579803188415b8f77c27a61f08179abb8cdc2d39887a8d1f3c87393bce12753f
+  bo: attempt 11 -> RETRY ['FAIL', 'FAIL', 'FAIL']
+  apply 0x01c7c5d013bfa49bd29cd8884007f0ef0524b2549b9675c409c1918db12b4f58
+cy:apply: ok https://explorer-studio-dev.genlayer.com/tx/0x01c7c5d013bfa49bd29cd8884007f0ef0524b2549b9675c409c1918db12b4f58
+cy opened attempt 12 and walks away; expire needs the 10 minute limit to pass
+waiting 690 seconds for the time limit
+  expire 0x78d5ca6b8079d251dedcb4bf3400bd8aa92be4f11860e49231d3227a68ed8e36
+cy:expire: ok https://explorer-studio-dev.genlayer.com/tx/0x78d5ca6b8079d251dedcb4bf3400bd8aa92be4f11860e49231d3227a68ed8e36
+  cy: EXPIRED
+  withdraw 0xe8010b8f33995564ce3cbec1beb3e5a465b8c1cf96b65968673bf97d0f7e831c
+ada:withdraw: ok https://explorer-studio-dev.genlayer.com/tx/0xe8010b8f33995564ce3cbec1beb3e5a465b8c1cf96b65968673bf97d0f7e831c
+  withdraw 0x69ae7ddbf568eceeb83d6657e0ba4927601709794c3e678807ce1066faa5c9ed
+dee:withdraw: ok https://explorer-studio-dev.genlayer.com/tx/0x69ae7ddbf568eceeb83d6657e0ba4927601709794c3e678807ce1066faa5c9ed
+  withdraw 0x41e905b51b66940d602ee01954ac3175588f62c229f6b4ac1dbf1c5e5cc8389c
+owner:withdraw: ok https://explorer-studio-dev.genlayer.com/tx/0x41e905b51b66940d602ee01954ac3175588f62c229f6b4ac1dbf1c5e5cc8389c
+wrote docs/seed.studio-next.md

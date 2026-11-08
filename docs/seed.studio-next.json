@@ -133,6 +133,54 @@
       "detail": "",
       "at": "2026-11-08T17:57:39Z",
       "note": ""
+    },
+    {
+      "key": "cy:expire",
+      "method": "expire",
+      "from": "0x4B8a480F54b5E4d625bD7CA541bED4C42dbf5C35",
+      "ok": true,
+      "hash": "0x78d5ca6b8079d251dedcb4bf3400bd8aa92be4f11860e49231d3227a68ed8e36",
+      "returned": 12,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T18:09:21Z",
+      "note": "called by the gate owner; anyone may"
+    },
+    {
+      "key": "ada:withdraw",
+      "method": "withdraw",
+      "from": "0xEdE90DEdA10F429A823C870FBC1A9F7470Ec47d1",
+      "ok": true,
+      "hash": "0xe8010b8f33995564ce3cbec1beb3e5a465b8c1cf96b65968673bf97d0f7e831c",
+      "returned": 1000000000000000000,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T18:09:31Z",
+      "note": "the fee that came back on a pass"
+    },
+    {
+      "key": "dee:withdraw",
+      "method": "withdraw",
+      "from": "0x1B702dd38b65eBD4713F11fb756d88fd32DD13b9",
+      "ok": true,
+      "hash": "0x69ae7ddbf568eceeb83d6657e0ba4927601709794c3e678807ce1066faa5c9ed",
+      "returned": 1000000000000000000,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T18:09:42Z",
+      "note": "the fee that came back on a pass"
+    },
+    {
+      "key": "owner:withdraw",
+      "method": "withdraw",
+      "from": "0x4B8a480F54b5E4d625bD7CA541bED4C42dbf5C35",
+      "ok": true,
+      "hash": "0x41e905b51b66940d602ee01954ac3175588f62c229f6b4ac1dbf1c5e5cc8389c",
+      "returned": 2000000000000000000,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T18:09:51Z",
+      "note": "the pool: fees of the failed and expired attempts"
     }
   ],
   "gates": {
@@ -186,6 +234,17 @@
         2
       ],
       "applicant": "0xE79DFdE4A1c4625bbD930696Dc10f406c94d2B82"
+    },
+    "cy": {
+      "id": 12,
+      "status": "EXPIRED",
+      "labels": [],
+      "dealt": [
+        7,
+        3,
+        0
+      ],
+      "applicant": "0x0BB146F053d9768cA0eB2337EcBb07c5590833e8"
     }
   }
 }
