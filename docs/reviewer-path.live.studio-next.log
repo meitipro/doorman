@@ -1,0 +1,30 @@
+accounts: {"owner":"0x55380f74E8C8769FB1863f6AA5F715237E6F5116","passer":"0xa26A4a2BB1e487b58bEB3e56F8B41cA8C8B560B2","failer":"0x9a65B5eF7e276a88F9BDAD9c9883dE47385DA593"} nonces at start {"owner":0,"passer":0,"failer":0}
+faucet-owner: HTTP 200 0 GEN -> 20 GEN 
+faucet-passer: HTTP 200 0 GEN -> 20 GEN 
+faucet-failer: HTTP 200 0 GEN -> 20 GEN 
+open-gate: open_gate ok in 10 s  0x4c0d8004dc987c53ecc65db29aee01bc8fd2bd109a0e123000b4b2e0daf97723
+  pass: the browser and the contract both deal Q2 Q5 Q8
+pass-apply: apply ok in 9 s  0xf1b8a50363b3b36a6c1030a7a776eb884c10f011a0ea3883a34f24397add52f1
+pass-submit: submit ok in 10 s  0xdc4147cb65494919d1b1bc7701ee4858a4959eb834b8d170e5e790248606e935
+GenLayer RPC error (eth_getTransactionByHash): fetch failed
+pass-judge: judge ok in 27 s  0xd1b42259035e5f66f4402e5f3fdd559f7fcd1c20a28f5f12c5328a78296b10dd
+  -> PASSED PASS,PASS,PASS (fee to applicant)
+  fail: the browser and the contract both deal Q1 Q8 Q4
+fail-apply: apply ok in 10 s  0x05bf82a4b4fa0bc6ede850a1d17783d391197c49be6c30c570ae0c5e73aebf9b
+GenLayer RPC error (gen_call): fetch failed
+fail-submit: submit ok in 11 s  0x9a5198842c7b795284f78005f12329f263a7dff745523d4a1ab12e9e5e18b552
+fail-judge: judge ok in 16 s  0xd278d113013c021858030a5eaf4ddfaa3c82498dac07ada569e8b89b65107842
+  -> RETRY FAIL,FAIL,FAIL (fee to pool)
+GenLayer RPC error (eth_getTransactionByHash): fetch failed
+GenLayer RPC error (eth_getTransactionByHash): fetch failed
+applicant-withdraw: withdraw ok in 13 s  0xb8643394daba8af6493a7278f31ee8ba26949309014b1da15165af2858286cbe
+  applicant: 18.99976398099999 GEN -> 19.99963767499999 GEN; owed 1 GEN, fee 0.000151306000002823 GEN; difference 25000000000000 wei
+GenLayer RPC error (eth_getTransactionByHash): fetch failed
+owner-withdraw: withdraw ok in 11 s  0x6d46f118b8c7f30dd28b230a7fd561fa90b28d433c2e3a9156500326e83c7646
+  owner: 19.999921342249998 GEN -> 20.999795036249992 GEN; owed 1 GEN, fee 0.000151306000002823 GEN; difference 25000000000000 wei
+bot (dry): found the pass and would grant the role to 100000000000000011
+page-gate: HTTP 200 shows it  https://doorman-genlayer.vercel.app/g/6
+page-pass-attempt: HTTP 200 shows it  https://doorman-genlayer.vercel.app/a/15
+page-fail-attempt: HTTP 200 shows it  https://doorman-genlayer.vercel.app/a/16
+
+recorded in docs/reviewer-path.studio-next.json (run live1)

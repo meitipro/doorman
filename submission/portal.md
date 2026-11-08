@@ -18,6 +18,10 @@ community, onboarding
 
 `submission/doorman-icon-512.png` (512 x 512, the site's own mark, inside the circular-crop safe area)
 
+## Site
+
+https://doorman-genlayer.vercel.app
+
 ## One-liner
 
 A gate that checks you read the rules.

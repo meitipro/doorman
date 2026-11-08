@@ -53,7 +53,7 @@ def main() -> int:
             key = s["key"]
             tx = f"[{s['hash'][:10]}…]({EXPLORER}/tx/{s['hash']})" if s.get("hash") else ""
             if key.startswith("faucet-"):
-                what = f"the site's `/api/faucet`, sent the address in lower case: HTTP {s['http']}, {gen(s['before'] or 0)} → {gen(s['after'] or 0)}"
+                what = f"the site's `/api/faucet`, sent the address in lower case: HTTP {s['http']}, {gen(s.get('before') or 0)} → {gen(s.get('after') or 0)}"
             elif s.get("method"):
                 what = f"`{s['method']}` {'accepted, returned ' + str(s['returned']) if s['ok'] else 'refused: ' + str(s.get('refusal'))}, decided in {s['seconds_to_decision']} s"
                 if s.get("final_status"):

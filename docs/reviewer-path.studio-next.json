@@ -353,6 +353,344 @@
           "at": "2026-11-08T18:16:50.578Z"
         }
       ]
+    },
+    "live1": {
+      "site": "https://doorman-genlayer.vercel.app",
+      "contract": "0xEEE15be43F84CF00c4799E5e776156055AAbd229",
+      "started": "2026-11-08T18:52:16.032Z",
+      "steps": [
+        {
+          "at": "2026-11-08T18:52:28.728Z",
+          "key": "faucet-owner",
+          "ok": true,
+          "http": 200,
+          "sent_address": "0x55380f74e8c8769fb1863f6aa5f715237e6f5116",
+          "answered_address": "0x55380f74E8C8769FB1863f6AA5F715237E6F5116",
+          "before": "0",
+          "after": "20000000000000000000",
+          "read_after": "20000000000000000000"
+        },
+        {
+          "at": "2026-11-08T18:52:31.453Z",
+          "key": "faucet-passer",
+          "ok": true,
+          "http": 200,
+          "sent_address": "0xa26a4a2bb1e487b58beb3e56f8b41ca8c8b560b2",
+          "answered_address": "0xa26A4a2BB1e487b58bEB3e56F8B41cA8C8B560B2",
+          "before": "0",
+          "after": "20000000000000000000",
+          "read_after": "20000000000000000000"
+        },
+        {
+          "at": "2026-11-08T18:52:33.636Z",
+          "key": "faucet-failer",
+          "ok": true,
+          "http": 200,
+          "sent_address": "0x9a65b5ef7e276a88f9bdad9c9883de47385da593",
+          "answered_address": "0x9a65B5eF7e276a88F9BDAD9c9883dE47385DA593",
+          "before": "0",
+          "after": "20000000000000000000",
+          "read_after": "20000000000000000000"
+        },
+        {
+          "at": "2026-11-08T18:52:43.717Z",
+          "key": "open-gate",
+          "method": "open_gate",
+          "account": "review_owner_live1",
+          "from": "0x55380f74E8C8769FB1863f6AA5F715237E6F5116",
+          "args": [
+            "Reviewer path live1: Kiln",
+            "KILN COMMUNITY HANDBOOK\n\nKiln is a community for people b...",
+            "[{\"q\":\"What does rule 2 ask you to do before posting a li...",
+            2,
+            "1000000000000000000",
+            10,
+            1
+          ],
+          "value": "0",
+          "hash": "0x4c0d8004dc987c53ecc65db29aee01bc8fd2bd109a0e123000b4b2e0daf97723",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 6,
+          "refusal": null,
+          "seconds_to_decision": 10
+        },
+        {
+          "at": "2026-11-08T18:52:45.868Z",
+          "key": "pass-deal-check",
+          "ok": true,
+          "browser": [
+            1,
+            4,
+            7
+          ],
+          "contract": [
+            1,
+            4,
+            7
+          ]
+        },
+        {
+          "at": "2026-11-08T18:52:55.094Z",
+          "key": "pass-apply",
+          "method": "apply",
+          "account": "review_pass_live1",
+          "from": "0xa26A4a2BB1e487b58bEB3e56F8B41cA8C8B560B2",
+          "args": [
+            6,
+            "100000000000000011"
+          ],
+          "value": "1000000000000000000",
+          "hash": "0xf1b8a50363b3b36a6c1030a7a776eb884c10f011a0ea3883a34f24397add52f1",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 15,
+          "refusal": null,
+          "seconds_to_decision": 9
+        },
+        {
+          "at": "2026-11-08T18:53:06.940Z",
+          "key": "pass-submit",
+          "method": "submit",
+          "account": "review_pass_live1",
+          "from": "0xa26A4a2BB1e487b58bEB3e56F8B41cA8C8B560B2",
+          "args": [
+            15,
+            "[\"When team tokens unlock, selling can push the price dow..."
+          ],
+          "value": "0",
+          "hash": "0xdc4147cb65494919d1b1bc7701ee4858a4959eb834b8d170e5e790248606e935",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 15,
+          "refusal": null,
+          "seconds_to_decision": 10
+        },
+        {
+          "at": "2026-11-08T18:53:34.403Z",
+          "key": "pass-judge",
+          "method": "judge",
+          "account": "review_pass_live1",
+          "from": "0xa26A4a2BB1e487b58bEB3e56F8B41cA8C8B560B2",
+          "args": [
+            15
+          ],
+          "value": "0",
+          "hash": "0xd1b42259035e5f66f4402e5f3fdd559f7fcd1c20a28f5f12c5328a78296b10dd",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 15,
+          "refusal": null,
+          "seconds_to_decision": 27
+        },
+        {
+          "at": "2026-11-08T18:53:35.214Z",
+          "key": "pass-read",
+          "ok": true,
+          "attempt_id": 15,
+          "status": "PASSED",
+          "labels": [
+            "PASS",
+            "PASS",
+            "PASS"
+          ],
+          "dealt": [
+            1,
+            4,
+            7
+          ],
+          "fee_to": "applicant"
+        },
+        {
+          "at": "2026-11-08T18:53:35.839Z",
+          "key": "fail-deal-check",
+          "ok": true,
+          "browser": [
+            0,
+            7,
+            3
+          ],
+          "contract": [
+            0,
+            7,
+            3
+          ]
+        },
+        {
+          "at": "2026-11-08T18:53:46.289Z",
+          "key": "fail-apply",
+          "method": "apply",
+          "account": "review_fail_live1",
+          "from": "0x9a65B5eF7e276a88F9BDAD9c9883dE47385DA593",
+          "args": [
+            6,
+            "100000000000000012"
+          ],
+          "value": "1000000000000000000",
+          "hash": "0x05bf82a4b4fa0bc6ede850a1d17783d391197c49be6c30c570ae0c5e73aebf9b",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 16,
+          "refusal": null,
+          "seconds_to_decision": 10
+        },
+        {
+          "at": "2026-11-08T18:54:10.834Z",
+          "key": "fail-submit",
+          "method": "submit",
+          "account": "review_fail_live1",
+          "from": "0x9a65B5eF7e276a88F9BDAD9c9883dE47385DA593",
+          "args": [
+            16,
+            "[\"Follow the rules in the handbook.\",\"Complain loudly.\",\"..."
+          ],
+          "value": "0",
+          "hash": "0x9a5198842c7b795284f78005f12329f263a7dff745523d4a1ab12e9e5e18b552",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 16,
+          "refusal": null,
+          "seconds_to_decision": 11
+        },
+        {
+          "at": "2026-11-08T18:54:26.609Z",
+          "key": "fail-judge",
+          "method": "judge",
+          "account": "review_fail_live1",
+          "from": "0x9a65B5eF7e276a88F9BDAD9c9883dE47385DA593",
+          "args": [
+            16
+          ],
+          "value": "0",
+          "hash": "0xd278d113013c021858030a5eaf4ddfaa3c82498dac07ada569e8b89b65107842",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 16,
+          "refusal": null,
+          "seconds_to_decision": 16
+        },
+        {
+          "at": "2026-11-08T18:54:27.168Z",
+          "key": "fail-read",
+          "ok": true,
+          "attempt_id": 16,
+          "status": "RETRY",
+          "labels": [
+            "FAIL",
+            "FAIL",
+            "FAIL"
+          ],
+          "dealt": [
+            0,
+            7,
+            3
+          ],
+          "fee_to": "pool"
+        },
+        {
+          "at": "2026-11-08T18:55:16.711Z",
+          "key": "applicant-withdraw",
+          "method": "withdraw",
+          "account": "review_pass_live1",
+          "from": "0xa26A4a2BB1e487b58bEB3e56F8B41cA8C8B560B2",
+          "args": [],
+          "value": "0",
+          "hash": "0xb8643394daba8af6493a7278f31ee8ba26949309014b1da15165af2858286cbe",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 1000000000000000000,
+          "refusal": null,
+          "seconds_to_decision": 13,
+          "final_status": "FINALIZED"
+        },
+        {
+          "at": "2026-11-08T18:55:17.773Z",
+          "key": "balance-applicant",
+          "ok": false,
+          "owed": "1000000000000000000",
+          "before": "18999763980999991531",
+          "after": "19999637674999988708",
+          "net_fee": "151306000002823",
+          "expected": "19999612674999988708",
+          "difference": "25000000000000"
+        },
+        {
+          "at": "2026-11-08T18:56:14.233Z",
+          "key": "owner-withdraw",
+          "method": "withdraw",
+          "account": "review_owner_live1",
+          "from": "0x55380f74E8C8769FB1863f6AA5F715237E6F5116",
+          "args": [],
+          "value": "0",
+          "hash": "0x6d46f118b8c7f30dd28b230a7fd561fa90b28d433c2e3a9156500326e83c7646",
+          "ok": true,
+          "status": "ACCEPTED",
+          "execution": "SUCCESS",
+          "returned": 1000000000000000000,
+          "refusal": null,
+          "seconds_to_decision": 11,
+          "final_status": "FINALIZED"
+        },
+        {
+          "at": "2026-11-08T18:56:15.896Z",
+          "key": "balance-owner",
+          "ok": false,
+          "owed": "1000000000000000000",
+          "before": "19999921342249997177",
+          "after": "20999795036249994354",
+          "net_fee": "151306000002823",
+          "expected": "20999770036249994354",
+          "difference": "25000000000000"
+        },
+        {
+          "at": "2026-11-08T18:56:21.061Z",
+          "key": "bot",
+          "ok": true,
+          "output": [
+            "2026-11-08T18:56:20.491Z attempt 15: role granted to 100000000000000011 (dry run)"
+          ]
+        },
+        {
+          "at": "2026-11-08T18:56:22.800Z",
+          "key": "page-gate",
+          "ok": true,
+          "url": "https://doorman-genlayer.vercel.app/g/6",
+          "http": 200
+        },
+        {
+          "at": "2026-11-08T18:56:23.955Z",
+          "key": "page-pass-attempt",
+          "ok": true,
+          "url": "https://doorman-genlayer.vercel.app/a/15",
+          "http": 200
+        },
+        {
+          "at": "2026-11-08T18:56:24.959Z",
+          "key": "page-fail-attempt",
+          "ok": true,
+          "url": "https://doorman-genlayer.vercel.app/a/16",
+          "http": 200
+        }
+      ],
+      "accounts": {
+        "owner": "0x55380f74E8C8769FB1863f6AA5F715237E6F5116",
+        "passer": "0xa26A4a2BB1e487b58bEB3e56F8B41cA8C8B560B2",
+        "failer": "0x9a65B5eF7e276a88F9BDAD9c9883dE47385DA593",
+        "nonces_at_start": {
+          "owner": 0,
+          "passer": 0,
+          "failer": 0
+        }
+      },
+      "finished": "2026-11-08T18:56:24.960Z"
     }
   }
 }
