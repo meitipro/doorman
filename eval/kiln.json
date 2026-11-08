@@ -1,0 +1,38 @@
+{
+  "name": "Kiln Discord",
+  "handbook": "KILN COMMUNITY HANDBOOK\n\nKiln is a community for people building on and using the Kiln protocol. Read this before you post. The moderators apply it as written.\n\nRule 1. Be civil. No harassment, no slurs, no pile-ons. Disagree with the idea, not the person.\n\nRule 2. Links. Before you post any link, ask a moderator in #help first. Never post a link to a wallet or a claim page, even if it looks official. Moderators remove such links and may ban the poster.\n\nRule 3. Nobody from the team will DM you first. If someone messages you offering help, a refund or an airdrop, it is a scam: do not answer, and report it in #help.\n\nRule 4. No price calls in #general. Talk about price, targets or when-moon only in #trading. The team unlock schedule matters here: when team tokens unlock, selling can push the price down (sell pressure), and price talk around those dates turns into panic and rumours. Rule 4 keeps #general calm.\n\nRule 5. Raids and spam. Posting the same message in many channels, joining only to promote something, or inviting people to raid another community gets you banned. Accounts that join together in a raid are removed together.\n\nRule 6. Bug reports go in #feedback. A useful report has the steps to reproduce and what you expected to happen. Add the app version and a screenshot if you can. Reports without steps are closed with a request for more.\n\nRule 7. Roles. Everyone starts with no role. Passing the Doorman gate gives you the Member role, which opens #general and #trading. Contributor is given by moderators for merged work, never on request. Moderators never ask for your seed phrase or your password.\n\nRule 8. If you disagree with a moderation decision, do not argue in public. Open a ticket in #help and the head moderator will answer you privately.\n\nThat is the whole handbook. When in doubt, ask in #help before you post.",
+  "bank": [
+    {
+      "q": "What does rule 2 ask you to do before posting a link?",
+      "rubric": "Names two points: ask a moderator in #help first, and never post a link to a wallet or a claim page."
+    },
+    {
+      "q": "Why does the team unlock schedule matter before you post about price?",
+      "rubric": "Names the reason, that unlocks can create sell pressure, and connects it to rule 4, the ban on price calls in #general. Both points are needed."
+    },
+    {
+      "q": "Where do bug reports go, and what makes one useful?",
+      "rubric": "Names the channel, #feedback, and two details: the steps to reproduce and what you expected to happen."
+    },
+    {
+      "q": "What counts as a raid, and what happens to a raider?",
+      "rubric": "Says a raid is posting the same message in many channels, joining only to promote, or inviting people to raid, and that the result is a ban."
+    },
+    {
+      "q": "How do you get the Member role, and who gives Contributor?",
+      "rubric": "Says passing the Doorman gate gives Member, and that moderators give Contributor for merged work, never on request."
+    },
+    {
+      "q": "Someone DMs you offering an airdrop. What do you do?",
+      "rubric": "Says it is a scam because the team never DMs first, and that you do not answer and report it in #help."
+    },
+    {
+      "q": "Where may you talk about price targets?",
+      "rubric": "Names #trading as the only place, and says price talk is not allowed in #general."
+    },
+    {
+      "q": "What do you do if you disagree with a moderation decision?",
+      "rubric": "Says to open a ticket in #help for the head moderator to answer privately, not to argue in public."
+    }
+  ]
+}

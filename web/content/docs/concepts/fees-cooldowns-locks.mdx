@@ -1,0 +1,36 @@
+---
+title: Fees, cooldowns and locks
+description: Where the money goes, how long you wait between attempts, and what a lock is.
+---
+
+## Money moves in one place
+
+| Call | Money |
+|---|---|
+| `apply` | takes the **exact** fee in. Any other amount is refused. |
+| `submit` | none |
+| `judge`, `expire` | move **balances** inside the contract. They never send anything. |
+| `withdraw` | the one payout: a top-level transfer of the caller's own balance. |
+
+A passed attempt credits its fee to the applicant's balance. Every other attempt credits its fee to the gate owner's balance, which the gate page calls the **pool**. Both are taken out with `withdraw`. A gate with a fee of zero has no money at all.
+
+Every wei the contract was paid is either still owed to someone or was paid out; a test checks that after every step.
+
+## Limits
+
+| Rule | Value |
+|---|---|
+| Pass mark | 2 or 3 of 3 |
+| Time limit | 10 to 60 minutes from the moment the attempt opens |
+| Attempts | at most 3 per round |
+| Cooldown between attempts | 1 to 48 hours, set by the gate |
+| Lock after the third failure | 7 days |
+| Fee | 0 to 1,000 GEN |
+
+## Time
+
+The contract has no block timestamp. Every time limit, cooldown and lock reads the transaction time, `gl.message.raw["datetime"]`, which is identical on every validator.
+
+## Network fees
+
+Studio Next also charges a **fee deposit** on every write, from the SDK's estimate, most of which is refunded when the transaction finalizes. The site shows it before you sign.

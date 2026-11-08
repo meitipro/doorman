@@ -1,0 +1,142 @@
+---
+title: 'Quickstart: open a gate'
+description: Open a gate for your community and connect the bot that grants the role, in about ten minutes.
+---
+
+<Callout type="warn">Answers are public. Never write a question that asks for personal details.</Callout>
+
+## 1. Open a gate
+
+<Tabs items={['On the site', 'From code']}>
+  <Tab value="On the site">
+    <Steps>
+      <Step>
+        Open [Open a gate](/new) and connect a wallet. The site walks you through **Connect wallet**, **Switch network** (it adds chain 61997 if your wallet lacks it) and **Get test GEN**.
+      </Step>
+      <Step>
+        Name the gate and write the **handbook**. It is the only source of truth the validators use.
+      </Step>
+      <Step>
+        Add 6 to 20 questions. Each has a one-line question and a one-line **rubric**: what a passing answer must show. The panel on the right shows how many different deals your bank allows and how many rubrics your handbook seems to cover. Those counts come from your browser; the validators do the grading.
+      </Step>
+      <Step>
+        Choose the pass mark (2 or 3 of 3), the fee, the time limit and the cooldown, then **Open the gate**. The gate page is the link you share.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab value="From code">
+    The call is `open_gate(name, handbook, bank, pass_mark, fee, time_limit_m, cooldown_h)`. The bank is JSON text. This script is the one that runs: with `--dry` it prints the call and the fee deposit the SDK estimates, and sends nothing.
+
+{/* include: examples/open-gate.mjs */}
+```js title="examples/open-gate.mjs"
+/**
+ * Open a gate from a script, signing with a local test account.
+ *
+ *   node examples/open-gate.mjs <account name> <bank.json> [--dry]
+ *
+ * bank.json holds { "name", "handbook", "bank": [{ "q", "rubric" }, ...] }, the shape of eval/kiln.json.
+ * With --dry nothing is sent: it prints the call and the fee deposit the SDK estimates for it.
+ * The site's own signing code (lib/genlayer-core.mjs) does the work, through a stand-in EIP-1193 wallet.
+ */
+import fs from 'node:fs';
+
+import { parseEther } from 'viem';
+
+import { CONTRACT, feesFor, outcomeOf, submit, waitDecided, walletClient } from '../lib/genlayer-core.mjs';
+import { ensureAccount, standinWallet } from '../scripts/standin-wallet.mjs';
+
+const [name, file, ...flags] = process.argv.slice(2);
+if (!name || !file) {
+  console.error('usage: node examples/open-gate.mjs <account name> <bank.json> [--dry]');
+  process.exit(2);
+}
+const gate = JSON.parse(fs.readFileSync(file, 'utf8'));
+ensureAccount(name);
+const { address, provider } = standinWallet(name);
+const client = walletClient(address, provider);
+const args = [gate.name, gate.handbook, JSON.stringify(gate.bank), 2, parseEther('1'), 10, 12];
+
+if (flags.includes('--dry')) {
+  const fees = await feesFor(client, 'open_gate', address);
+  console.log(JSON.stringify({ contract: CONTRACT, method: 'open_gate', from: address, questions: gate.bank.length, pass_mark: 2, fee_gen: '1', time_limit_m: 10, cooldown_h: 12, feeValue: String(fees.feeValue) }));
+  await new Promise((r) => setTimeout(r, 200));
+  process.exit(0);
+}
+const hash = await submit(client, { method: 'open_gate', args, sender: address });
+const outcome = outcomeOf(await waitDecided(client, hash, 'open_gate'));
+console.log(JSON.stringify({ hash, ok: outcome.ok, gate_id: outcome.returned ?? null, refusal: outcome.refusal || null }));
+process.exit(outcome.ok ? 0 : 1);
+```
+{/* end include */}
+  </Tab>
+</Tabs>
+
+## 2. Connect the bot
+
+The bot reads passes and grants the role. It **holds no wallet key and signs nothing**. Its only secret is your Discord bot token.
+
+```bash
+DOORMAN_GATE=7 DISCORD_TOKEN=... DISCORD_GUILD=... DISCORD_ROLE=... npm run bot
+```
+
+The full settings are on the [bot configuration](/docs/reference/bot) page.
+
+## 3. Read a pass
+
+A pass is one read, `get_pass(gate_id, address)`. This is the script behind it:
+
+{/* include: examples/read-pass.mjs */}
+```js title="examples/read-pass.mjs"
+/**
+ * Read a pass the way the Discord bot does: no wallet, no key, nothing signed.
+ *
+ *   node examples/read-pass.mjs <gate id> <wallet address>
+ *
+ * get_pass answers JSON text. `passed` is the door; `discord_id` is who to give the role to.
+ */
+import { CONTRACT, readClient, retried } from '../lib/genlayer-core.mjs';
+
+const [gate, address] = process.argv.slice(2);
+if (!gate || !address) {
+  console.error('usage: node examples/read-pass.mjs <gate id> <wallet address>');
+  process.exit(2);
+}
+const client = readClient();
+const raw = await retried(() =>
+  client.readContract({ address: CONTRACT, functionName: 'get_pass', args: [Number(gate), address.toLowerCase()] }),
+);
+const pass = JSON.parse(String(raw));
+console.log(JSON.stringify({ found: pass.found, passed: pass.passed, passed_at: pass.passed_at, discord_id: pass.discord_id, attempts: pass.attempts, left: pass.left }));
+```
+{/* end include */}
+
+The same read from Python:
+
+{/* include: examples/read_pass.py */}
+```python title="examples/read_pass.py"
+"""
+Read a pass from Python with genlayer-py 0.19.0rc2, the way a bot written in Python would.
+
+    python web/examples/read_pass.py <gate id> <wallet address>
+
+Reads need an account even for views, so a throwaway one is made and never funded.
+"""
+import json
+import sys
+
+from genlayer_py import create_account, create_client
+from genlayer_py.chains import studio_devnet
+
+CONTRACT = json.load(open("web/lib/deployment.json"))["doorman"]
+studio_devnet.rpc_urls = {"default": {"http": ["https://studio-next.genlayer.com/api"]}}
+
+gate, address = int(sys.argv[1]), sys.argv[2].lower()
+client = create_client(chain=studio_devnet, account=create_account())
+pass_ = json.loads(client.read_contract(address=CONTRACT, function_name="get_pass", args=[gate, address]))
+print(json.dumps({k: pass_[k] for k in ("found", "passed", "passed_at", "discord_id", "attempts", "left")}))
+```
+{/* end include */}
+
+## 4. Take your fees out
+
+Failed and expired attempts credit their fees to your gate's **pool**. `withdraw()` is the only call that moves money out, and it pays the caller's own balance. Use **Withdraw** on [Passes](/me).

@@ -1,0 +1,15 @@
+{
+  "title": "Doorman docs",
+  "pages": [
+    "---Getting started---",
+    "index",
+    "quickstart",
+    "take-a-gate",
+    "---Concepts---",
+    "...concepts",
+    "---Reference---",
+    "...reference",
+    "---More---",
+    "...more"
+  ]
+}

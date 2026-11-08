@@ -1,0 +1,16 @@
+{
+  "deployments": {
+    "studio-next": {
+      "chain_id": 61997,
+      "deployed_at": "2026-11-08T17:40:17Z",
+      "doorman": "0xEEE15be43F84CF00c4799E5e776156055AAbd229",
+      "doorman_deployer": "0x420E5ae2c8Be10AC444C1E039863cEbfF11713f4",
+      "doorman_file": "contracts/doorman.py",
+      "doorman_sha256": "9a180bd2877c0a59d755d009d560262ef499d23d0ac2762f9564b16345a5f0d6",
+      "doorman_tx": "0x2c48eff56b1558dc59cb7ceaef900e111b7e54ab7a1e4274dfc63831fdab2e91",
+      "explorer": "https://explorer-studio-dev.genlayer.com",
+      "rpc": "https://studio-next.genlayer.com/api",
+      "runtime": "py-genlayer:babwp9t37jw9g4j2bccgn14g6x7x9s1f7dsmh7emvz735pz4zxa0"
+    }
+  }
+}

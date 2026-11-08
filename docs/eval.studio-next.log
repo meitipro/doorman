@@ -1,0 +1,57 @@
+  0x07151835 0.00 -> 1000.00 GEN
+  open_gate 0x6bcdd1cbd4a7c60a032b4475465d584ed978fdd37b1d3fdf84dc1ad16af36389
+  gate 2  https://explorer-studio-dev.genlayer.com/tx/0x6bcdd1cbd4a7c60a032b4475465d584ed978fdd37b1d3fdf84dc1ad16af36389
+
+R1: cases 1, 6, 8
+  account for golden_r1 found after 10 tries: 0x58FCae72Cb4c6cb5d46cE97E02C00588C7669363
+  0x58FCae72 0.00 -> 1000.00 GEN
+  apply 0x7c2a8e6739c7bbe9b80dfdbadbfefff78b3a1fbceb1c0b08e478d524f8815d22
+  submit 0x569720300a7933192ab02731b3ef69c23f8158505678ca2adddee63c0272abb6
+  judge 0x28842184043af95f5d5d139e30ded4e4c0c5ae206aaabcc9b6bedad69f628ca6
+    6 MATCH got PASS, expected PASS
+    8 MATCH got PASS, expected PASS
+    1 MISS  got FAIL, expected PASS
+  attempt 2 PASSED  https://explorer-studio-dev.genlayer.com/tx/0x28842184043af95f5d5d139e30ded4e4c0c5ae206aaabcc9b6bedad69f628ca6
+
+R2: cases 2, 7, 9
+  account for golden_r2 found after 42 tries: 0x4E0da8b95AdF6Da352cE270417E5056133AC1A83
+  0x4E0da8b9 0.00 -> 1000.00 GEN
+  apply 0x1e97c208e296efd10eedc8a2305e40e2dc3b8231cb6f1c30e28ecc404dfd3502
+  submit 0xbf73c53c2f9af68b0c24f7d3b72a3ba20526eb9e8502aed258e07b137f8d5f0f
+  judge 0xee0d449340ed0a62ccc124dc1905c99c81ed986227651c58a4b15b4c8eadb3a2
+    7 MATCH got FAIL, expected FAIL
+    9 MATCH got FAIL, expected FAIL
+    2 MATCH got PASS, expected PASS
+  attempt 3 RETRY  https://explorer-studio-dev.genlayer.com/tx/0xee0d449340ed0a62ccc124dc1905c99c81ed986227651c58a4b15b4c8eadb3a2
+
+R3: cases 3, C1, 10
+  account for golden_r3 found after 2 tries: 0x28399937b0ddfF8484348e8bFD51535803A15Bf5
+  0x28399937 0.00 -> 1000.00 GEN
+  apply 0xd53229eb8b1e25549c282b688061c3daef91100f7097b9a1aac5c0004fa1042c
+  submit 0xa2f816e3debf8cb55cbd26973643c60300a233aae3dd83c599dc86fc01507186
+  judge 0xb0e95d01a4035089ab192c5048e43758170f43c54537ccea009f43d0fd3b5220
+  no labels: status=UNDETERMINED execution=FINISHED_WITH_RETURN
+
+R4: cases 4, C2, C3
+  account for golden_r4 found after 4 tries: 0x43997A4B021CC7ae0D5735A499c1b2EfB4E5e0C3
+  0x43997A4B 0.00 -> 1000.00 GEN
+  apply 0xa897d8048e73b3b68ca6511487c644d93013929913faf86c799e398dac9f0b47
+  submit 0xab9873964c92641014b35444d777af1e9c71034636f06162fe8314135ad2684e
+  judge 0x91ca523436c2b3092d7eba54e8c3639f8e8626af0705226e11975d85a57c4f4b
+   C2 MATCH got PASS, expected PASS
+    4 MISS  got PASS, expected FAIL
+   C3 MATCH got PASS, expected PASS
+  attempt 5 PASSED  https://explorer-studio-dev.genlayer.com/tx/0x91ca523436c2b3092d7eba54e8c3639f8e8626af0705226e11975d85a57c4f4b
+
+R5: cases 5, C4, C5
+  account for golden_r5 found after 32 tries: 0x2Fae9B51d8C6e170732b48F2E44499018b56E078
+  0x2Fae9B51 0.00 -> 1000.00 GEN
+  apply 0x693d823e4522b423a3714fd1de456aa337c360aa4ec2cdc907d7fe7276c52eda
+  submit 0x3608641255a9876bb88f56eb40211248b358eeff591577de76393836a3c60dde
+  judge 0x845fc439a7e975dfa67f3cf2382b1450d950a670cecec2614a4f244747d2ddad
+    5 MATCH got FAIL, expected FAIL
+   C4 MATCH got PASS, expected PASS
+   C5 MATCH got PASS, expected PASS
+  attempt 6 PASSED  https://explorer-studio-dev.genlayer.com/tx/0x845fc439a7e975dfa67f3cf2382b1450d950a670cecec2614a4f244747d2ddad
+
+wrote eval/results.md: golden 6/8

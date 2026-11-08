@@ -1,0 +1,26 @@
+---
+title: FAQ and changelog
+description: Common questions, and what changed.
+---
+
+## FAQ
+
+**Is it a captcha?** No. A captcha checks for a pulse. Doorman checks that someone read the handbook.
+
+**Can I read the handbook while I answer?** Yes. It is meant to be open next to the form.
+
+**What if I fail?** You may try again after the cooldown, up to three attempts. A failed attempt's fee goes to the pool. After the third failure you wait seven days.
+
+**Which network?** GenLayer Studio Next, chain 61997. Test GEN is free from the site's faucet.
+
+**Why can anyone call `judge` and `expire`?** So a pass does not wait for the applicant to return, and an applicant who walked away cannot hold their seat. The caller is recorded.
+
+**Can an owner move the bar on me?** No. An open attempt grades against the handbook and questions it was dealt.
+
+**Can a pass be taken away?** No. Nothing in the contract revokes one.
+
+## Changelog
+
+**v1, November 2026.** The first deployment on Studio Next: ten methods, the judge prompt from the build spec word for word, labels-only agreement, top-level payouts only. The deployed address and source hash are on the [addresses page](/docs/reference/addresses).
+
+The runtime header is `py-genlayer:babwp9t3…`, the runner Studio Next accepted on the day this was deployed. The `5jycge4q…` header that earlier projects used was rejected by the live network that day (`invalid_contract runner malformed`), so it was replaced before the first deploy.

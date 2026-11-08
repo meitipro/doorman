@@ -1,0 +1,26 @@
+---
+title: Introduction
+description: Doorman is a reading gate for online communities, graded by GenLayer validators.
+---
+
+<Callout>A pass shows someone read the handbook. It does not show they are one person, and it cannot see what they do next.</Callout>
+
+Every community has the same first day: a wave of new members, the same five questions asked in every channel, and a rule nobody read being broken within the hour. A captcha checks for a pulse. A fixed quiz gets posted in a group by the first person to pass. Doorman checks that a person **read the handbook**.
+
+## What it does
+
+1. A community writes its **handbook** (at most 3,000 characters) and a **bank of 6 to 20 questions**, each with a title (at most 100 characters) and a **rubric** (at most 300) saying what a passing answer must show.
+2. An applicant opens an **attempt** with the gate's fee. Three questions are **drawn from their own address**, so two neighbours rarely get the same three.
+3. They answer in their own words, in any language, inside the time limit (10 to 60 minutes).
+4. GenLayer **validators** grade each answer against the handbook and its rubric: one label, `PASS` or `FAIL`, per answer.
+5. The verdict is **computed in code** from the three labels and the pass mark the community wrote. A pass is recorded on chain, the fee comes back, and a read-only bot grants the role.
+
+## What is on chain
+
+Everything. The handbook, the bank, every attempt's questions, answers, labels and verdict are public text on [Studio Next](/docs/reference/addresses). That is deliberate: a gate that waves everyone through is visible in its pass rate, and the rubrics can be read without being gamed.
+
+## Where to go next
+
+- **Run a community?** [Open a gate](/docs/quickstart) and connect the bot.
+- **Joining one?** [Take a gate](/docs/take-a-gate).
+- **Reviewing it?** Read [the judge prompt, word for word](/docs/more/judge-prompt), the [evaluation results with transactions](/docs/more/evaluation), and the [limitations](/docs/more/limitations).

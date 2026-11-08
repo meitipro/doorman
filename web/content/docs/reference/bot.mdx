@@ -1,0 +1,29 @@
+---
+title: Bot configuration
+description: The read-only Discord bot that grants the role when it finds a pass on chain.
+---
+
+The bot polls `get_pass(gate_id, address)` and grants a role. **It holds no wallet key and signs nothing.** It never writes to the chain. Its only secret is a Discord bot token, which you supply in the environment.
+
+| Variable | Meaning |
+|---|---|
+| `DOORMAN_GATE` | the gate id to watch |
+| `DISCORD_TOKEN` | your Discord bot token (a secret; never commit it) |
+| `DISCORD_GUILD` | the server (guild) id |
+| `DISCORD_ROLE` | the id of the role to grant, such as Member |
+| `DOORMAN_POLL_SECONDS` | how often to poll; default 60 |
+| `DOORMAN_DRY` | set to `1` to print what it would do without calling Discord |
+
+```bash
+cd bot
+npm install
+DOORMAN_GATE=7 DISCORD_TOKEN=... DISCORD_GUILD=... DISCORD_ROLE=... npm run bot
+```
+
+## How it knows who to promote
+
+The applicant gives their Discord id when they open an attempt, and the contract stores it with the attempt and with the pass. Each poll the bot reads the contract's totals, then reads every attempt it has not seen yet with `get_attempt`. For an attempt at the watched gate that ended PASSED it confirms the pass with `get_pass(gate, applicant)`, which also carries the Discord id, and grants the role to that id. It remembers the last attempt it read in `bot/state.json`, so a restart does not grant twice. Its Discord permissions need only **Manage Roles**, and its role must sit above the role it grants.
+
+## What it is not
+
+It cannot tell whether the person at that Discord id controls the wallet that took the test: the applicant typed the id. A community that needs that proof should add a step of its own, such as asking the member to say the wallet's last four characters in a verification channel.

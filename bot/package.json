@@ -1,0 +1,14 @@
+{
+  "name": "doorman-bot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Reads Doorman passes from GenLayer Studio Next and grants a Discord role. Holds no wallet key; signs nothing.",
+  "scripts": {
+    "bot": "node bot.mjs",
+    "test": "node --test test.mjs"
+  },
+  "dependencies": {
+    "genlayer-js": "2.0.0-rc.1"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "chainId": 61997,
+  "deployTx": "0x2c48eff56b1558dc59cb7ceaef900e111b7e54ab7a1e4274dfc63831fdab2e91",
+  "deployedAt": "2026-11-08T17:40:17Z",
+  "doorman": "0xEEE15be43F84CF00c4799E5e776156055AAbd229",
+  "explorer": "https://explorer-studio-dev.genlayer.com",
+  "network": "studio-next",
+  "rpc": "https://studio-next.genlayer.com/api",
+  "sourceSha256": "9a180bd2877c0a59d755d009d560262ef499d23d0ac2762f9564b16345a5f0d6"
+}

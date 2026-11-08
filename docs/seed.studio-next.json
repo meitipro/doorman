@@ -1,0 +1,191 @@
+{
+  "network": "studio-next",
+  "contract": "0xEEE15be43F84CF00c4799E5e776156055AAbd229",
+  "steps": [
+    {
+      "key": "kiln:open_gate",
+      "method": "open_gate",
+      "from": "0x4B8a480F54b5E4d625bD7CA541bED4C42dbf5C35",
+      "ok": true,
+      "hash": "0x04bd0c8853787c354ef369a1717d790cce9450b8f7257950a008f1f012365279",
+      "returned": 4,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T17:55:35Z",
+      "note": "pass mark 2 of 3, fee 1 GEN, 10 minutes, 1 hour cooldown"
+    },
+    {
+      "key": "ada:apply",
+      "method": "apply",
+      "from": "0xEdE90DEdA10F429A823C870FBC1A9F7470Ec47d1",
+      "ok": true,
+      "hash": "0x80c61785dec18340f18a7037ddb1946c4c80f58e6367def2b80cd5d3a7b075a5",
+      "returned": 9,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T17:55:48Z",
+      "note": ""
+    },
+    {
+      "key": "ada:submit",
+      "method": "submit",
+      "from": "0xEdE90DEdA10F429A823C870FBC1A9F7470Ec47d1",
+      "ok": true,
+      "hash": "0x663f140f40676df4f78171d42dc5f7a3444c7e9889475b7b0faf8f2bb226120d",
+      "returned": 9,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T17:55:58Z",
+      "note": ""
+    },
+    {
+      "key": "ada:judge",
+      "method": "judge",
+      "from": "0xEdE90DEdA10F429A823C870FBC1A9F7470Ec47d1",
+      "ok": true,
+      "hash": "0x3e7868685199298f4477d8f6605538a107a956f8b55ba4588664130bcd888a49",
+      "returned": 9,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T17:56:12Z",
+      "note": ""
+    },
+    {
+      "key": "dee:apply",
+      "method": "apply",
+      "from": "0x1B702dd38b65eBD4713F11fb756d88fd32DD13b9",
+      "ok": true,
+      "hash": "0x595c95688dc29675c047026bbc2f6bf379f2e188ec2cab798696e30f9fd899a8",
+      "returned": 10,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T17:56:21Z",
+      "note": ""
+    },
+    {
+      "key": "dee:submit",
+      "method": "submit",
+      "from": "0x1B702dd38b65eBD4713F11fb756d88fd32DD13b9",
+      "ok": true,
+      "hash": "0x6e03dd0321c77634d813e699ff2d4a99da0d893c4e3e066e1fe119666f8510b8",
+      "returned": 10,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T17:56:31Z",
+      "note": ""
+    },
+    {
+      "key": "dee:judge",
+      "method": "judge",
+      "from": "0x1B702dd38b65eBD4713F11fb756d88fd32DD13b9",
+      "ok": true,
+      "hash": "0x287928ba2ce8ef0bd3425d96a1338e41fce5cb84064fb5161d218637a205fc83",
+      "returned": 10,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T17:56:51Z",
+      "note": ""
+    },
+    {
+      "key": "bo:apply",
+      "method": "apply",
+      "from": "0xE79DFdE4A1c4625bbD930696Dc10f406c94d2B82",
+      "ok": true,
+      "hash": "0x35ad94e8310d6f2d084b15730ecbbb1698e939d64e98b08294273fefe4040606",
+      "returned": 11,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T17:57:00Z",
+      "note": ""
+    },
+    {
+      "key": "bo:submit",
+      "method": "submit",
+      "from": "0xE79DFdE4A1c4625bbD930696Dc10f406c94d2B82",
+      "ok": true,
+      "hash": "0xd1606051d61c03da8f0dfc8c5be9c80a5d5aa31ca01c113c14ef4d0958be20d1",
+      "returned": 11,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T17:57:09Z",
+      "note": ""
+    },
+    {
+      "key": "bo:judge",
+      "method": "judge",
+      "from": "0xE79DFdE4A1c4625bbD930696Dc10f406c94d2B82",
+      "ok": true,
+      "hash": "0x579803188415b8f77c27a61f08179abb8cdc2d39887a8d1f3c87393bce12753f",
+      "returned": 11,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T17:57:29Z",
+      "note": ""
+    },
+    {
+      "key": "cy:apply",
+      "method": "apply",
+      "from": "0x0BB146F053d9768cA0eB2337EcBb07c5590833e8",
+      "ok": true,
+      "hash": "0x01c7c5d013bfa49bd29cd8884007f0ef0524b2549b9675c409c1918db12b4f58",
+      "returned": 12,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T17:57:39Z",
+      "note": ""
+    }
+  ],
+  "gates": {
+    "kiln": {
+      "id": 4,
+      "owner": "0x4B8a480F54b5E4d625bD7CA541bED4C42dbf5C35"
+    }
+  },
+  "attempts": {
+    "ada": {
+      "id": 9,
+      "status": "PASSED",
+      "labels": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "dealt": [
+        2,
+        5,
+        4
+      ],
+      "applicant": "0xEdE90DEdA10F429A823C870FBC1A9F7470Ec47d1"
+    },
+    "dee": {
+      "id": 10,
+      "status": "PASSED",
+      "labels": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "dealt": [
+        6,
+        7,
+        5
+      ],
+      "applicant": "0x1B702dd38b65eBD4713F11fb756d88fd32DD13b9"
+    },
+    "bo": {
+      "id": 11,
+      "status": "RETRY",
+      "labels": [
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "dealt": [
+        3,
+        0,
+        2
+      ],
+      "applicant": "0xE79DFdE4A1c4625bbD930696Dc10f406c94d2B82"
+    }
+  }
+}

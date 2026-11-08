@@ -1,0 +1,13 @@
+
+RH: cases H3, H2, H1
+  account for golden_rh found after 61 tries: 0x16006af83724c79533C5047f99c8b8F99b7543C2
+  0x16006af8 0.00 -> 1000.00 GEN
+  apply 0x8436b80853bcf8b28538f692b359886e1a63400a953204d5b662a83a12e93c77
+  submit 0x812b95f14abb2ef1f1958a714ee7b486e56e11535e30a90f23ac04d2f7950635
+  judge 0x41ea0ca3b6e6f3f9091aabaf479cf5833159b532a769210b528b28225c42faee
+   H1 FAIL  (held out, no expected answer)
+   H3 FAIL  (held out, no expected answer)
+   H2 FAIL  (held out, no expected answer)
+  attempt 7 RETRY  https://explorer-studio-dev.genlayer.com/tx/0x41ea0ca3b6e6f3f9091aabaf479cf5833159b532a769210b528b28225c42faee
+
+wrote eval/results.md: golden 6/8

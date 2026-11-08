@@ -1,0 +1,33 @@
+{
+  "about": "Answers to the eight Kiln questions, by position in the bank. Shared by scripts/seed.py's tables and web/scripts/reviewer-path.mjs.",
+  "good": [
+    "Ask a moderator in #help before you post any link, and never post a link to a wallet or a claim page.",
+    "When team tokens unlock, selling can push the price down, so rule 4 bans price calls in #general to stop panic and rumours.",
+    "In #feedback, with the steps to reproduce and what you expected to happen.",
+    "Posting the same message in many channels, or joining only to promote something, is a raid, and raiders are banned.",
+    "Passing the Doorman gate gives you Member. Contributor comes from moderators for merged work, never on request.",
+    "It is a scam, the team never DMs first. Do not answer, and report it in #help.",
+    "Only in #trading. Price talk is not allowed in #general.",
+    "Open a ticket in #help and the head moderator answers you privately, instead of arguing in public."
+  ],
+  "spanish": [
+    "Pregunta primero a un moderador en #help antes de publicar cualquier enlace, y nunca publiques un enlace a una cartera ni a una página de reclamación.",
+    "Cuando se desbloquean los tokens del equipo, las ventas pueden bajar el precio, por eso la regla 4 prohíbe hablar de precios en #general: evita el pánico y los rumores.",
+    "En #feedback, con los pasos para reproducirlo y lo que esperabas que pasara.",
+    "Publicar el mismo mensaje en muchos canales, o entrar solo para promocionar algo, es una incursión, y quien la hace es expulsado.",
+    "Pasar la puerta de Doorman da el rol de Member. Contributor lo dan los moderadores por trabajo integrado, nunca a petición.",
+    "Es una estafa, el equipo nunca escribe primero por mensaje directo. No respondas y repórtalo en #help.",
+    "Solo en #trading. Hablar de precios no está permitido en #general.",
+    "Abre un ticket en #help y el moderador principal responde en privado, en vez de discutir en público."
+  ],
+  "weak": [
+    "Follow the rules in the handbook.",
+    "Because prices go up.",
+    "Post it in #general, it is faster.",
+    "Being annoying.",
+    "You ask nicely.",
+    "Click the link and see.",
+    "Anywhere.",
+    "Complain loudly."
+  ]
+}

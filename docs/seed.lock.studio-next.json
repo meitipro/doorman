@@ -1,0 +1,77 @@
+{
+  "network": "studio-next",
+  "contract": "0xEEE15be43F84CF00c4799E5e776156055AAbd229",
+  "steps": [
+    {
+      "key": "quill:open_gate",
+      "method": "open_gate",
+      "from": "0x845Af04AB6DF767203Db93c80dF9f9212CB6Cf94",
+      "ok": true,
+      "hash": "0x3fdd26e14abddd3ebc7edc074e2a27b2bc65746a89dba60af39b3bb841026321",
+      "returned": 3,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T17:55:04Z",
+      "note": "the same handbook, a Telegram community, 1 hour cooldown, used to show a lock"
+    },
+    {
+      "key": "ed1:apply",
+      "method": "apply",
+      "from": "0x6486709E5eF732dF850DC4C2Ae46F615B588511E",
+      "ok": true,
+      "hash": "0x02d7afc90e4841cf8bb10a0a2386edb070ba4d0bc79e910abf7e5b2e1922309b",
+      "returned": 8,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T17:55:18Z",
+      "note": ""
+    },
+    {
+      "key": "ed1:submit",
+      "method": "submit",
+      "from": "0x6486709E5eF732dF850DC4C2Ae46F615B588511E",
+      "ok": true,
+      "hash": "0x9b2cf44f80bcb36e336e0b58c4d1a4a97789e1d73252301559a25b2cc01e47ef",
+      "returned": 8,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T17:55:27Z",
+      "note": ""
+    },
+    {
+      "key": "ed1:judge",
+      "method": "judge",
+      "from": "0x6486709E5eF732dF850DC4C2Ae46F615B588511E",
+      "ok": true,
+      "hash": "0x771f983ed927efc7b92cdc2242fa91884358b337f057ef0c38e645aa42d41d9a",
+      "returned": 8,
+      "refusal": "",
+      "detail": "",
+      "at": "2026-11-08T17:55:46Z",
+      "note": ""
+    }
+  ],
+  "gates": {
+    "quill": {
+      "id": 3,
+      "owner": "0x845Af04AB6DF767203Db93c80dF9f9212CB6Cf94"
+    }
+  },
+  "attempts": {
+    "ed1": {
+      "id": 8,
+      "status": "RETRY",
+      "labels": [
+        "FAIL",
+        "FAIL",
+        "FAIL"
+      ],
+      "dealt": [
+        7,
+        5,
+        1
+      ],
+      "applicant": "0x6486709E5eF732dF850DC4C2Ae46F615B588511E"
+    }
+  }
+}

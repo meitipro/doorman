@@ -1,0 +1,28 @@
+---
+title: How questions are drawn
+description: Three questions from a hash of the gate, your address and the attempt number, the same in the contract and the browser.
+---
+
+An attempt is dealt exactly three questions, by a function with no randomness in it, so every validator and the site compute the same three.
+
+```text
+h     = sha256( "gate|address|attempt" )          the address in lowercase hex
+order = bank indexes 0..n-1, sorted by sha256( h + index as two big-endian bytes )
+dealt = the first three of order
+```
+
+For example, attempt 1 of address `0xA1…` at gate 7 hashes the text `7|0xa1a1…|1`. The same address at attempt 2 hashes a different text and gets a different three.
+
+## Why this is the design
+
+- **Sharing answers does not help.** A member who posts their answers helps nobody, because their neighbour is dealt other questions, and a pasted answer to another question fails.
+- **Farming questions costs money.** Failing on purpose to see more questions costs a fee each time, there are at most three attempts, and the bank is larger than any attempt sees.
+- **A bank of n questions allows n choose 3 deals.** Eight questions allow 56, twenty allow 1,140.
+
+## The same in the browser
+
+`web/lib/deal.mjs` is the browser's copy of the contract's `deal()`. `tests/vectors.json` holds 288 vectors written by the contract, and a test runs both against them, so the two cannot drift apart unnoticed. The apply page shows you the three questions you will be dealt and checks them against the contract's own answer before you sign.
+
+## The attempt number
+
+The attempt number counts every attempt an address has ever opened at the gate, not just the current round. That is why a new round after a lock deals new questions.

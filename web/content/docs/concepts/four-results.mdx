@@ -1,0 +1,34 @@
+---
+title: The four results
+description: PASSED, RETRY, LOCKED and EXPIRED, and exactly what each one does.
+---
+
+The verdict is **computed in code** from three labels, `PASS` or `FAIL`, one per question, and the pass mark the community wrote. What counts as a pass is never the model's opinion.
+
+| Result | Meaning | Money | Next |
+|---|---|---|---|
+| **PASSED** | at least the pass mark of answers show what their rubric asks | fee credited back | a pass is recorded for the address and the Discord id |
+| **RETRY** | below the pass mark, with attempts left | fee to the pool | cooldown, then three new questions |
+| **LOCKED** | below the pass mark on the last attempt | fee to the pool | no new attempt for 7 days |
+| **EXPIRED** | no answer submitted within the time limit | fee to the pool | counts as an attempt |
+
+## Lifecycle of one attempt
+
+```text
+apply ──► APPLIED ──submit──► ANSWERED ──judge──► PASSED
+              │                                 ► RETRY
+              │ no answer in time               ► LOCKED
+              └──expire──────────────► EXPIRED
+```
+
+`APPLIED` and `ANSWERED` are the two open states. Everything else is final.
+
+## Who can call what
+
+- `apply` and `submit` are the applicant's.
+- `judge` and `expire` are **open to anyone, on purpose**. A pass should not wait for the applicant to come back, and an applicant who walked away cannot hold their seat. Whoever calls them is recorded on the attempt as `closed_by`.
+- The pass is recorded when `judge` settles the attempt. Nobody can revoke it.
+
+## The third failure
+
+A third failure locks the address out of the gate for seven days, whichever way it failed: below the mark, or out of time. When the lock ends, a new round of three attempts begins with **new questions**, because the attempt number keeps counting.

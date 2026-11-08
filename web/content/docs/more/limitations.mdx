@@ -1,0 +1,23 @@
+---
+title: Limitations
+description: What a pass does and does not prove, and where this build stops.
+---
+
+## What a pass proves
+
+Someone, in their own words, showed a set of validators that they understood a handbook well enough to satisfy a rubric on three questions drawn for their address.
+
+## What it does not
+
+- **Not a unique human.** Many wallets, one person: a farmer can pass from many addresses. The fee and the cooldown keep it in proportion; GenLayer Identity or a captcha pairs with Doorman when uniqueness matters.
+- **Not later conduct.** A pass cannot see what a member does afterwards.
+- **Not private.** Handbooks, questions, rubrics, answers and labels are all public text on chain, so questions must never ask for personal details.
+- **Only as good as the handbook and the rubrics.** A loose rubric anyone can pass makes a gate that waves everyone through. That is visible in the gate's pass rate.
+- **Not binding on the model.** Models disagree. The golden set missed two of ten items, and the evaluation page shows which; the held-out items all came back FAIL. A validator disagreement is a failed round, never a verdict, and nothing defaults to a label.
+
+## Where this build stops
+
+- The contract is one deployed instance on Studio Next, a test network: the GEN is test GEN.
+- A Discord id is typed by the applicant, so the bot trusts the applicant's claim about whose id it is.
+- The bot is written and tested against a mock Discord; it has not been run against a live server in this repository.
+- Telegram and X adapters, role tiers, one pass per verified person, and gate analytics are not built.

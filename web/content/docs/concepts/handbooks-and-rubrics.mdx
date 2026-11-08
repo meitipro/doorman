@@ -1,0 +1,35 @@
+---
+title: Handbooks and rubrics
+description: What a community writes, and how it is used to grade.
+---
+
+A gate is two texts and some numbers.
+
+| Part | Limit |
+|---|---|
+| Handbook | at most 3,000 characters |
+| Bank | 6 to 20 questions |
+| Question | at most 100 characters, one line |
+| Rubric | at most 300 characters, one line |
+| Answer | at most 600 characters |
+
+## The handbook is the only source of truth
+
+The prompt tells the validators that the handbook is the only source of truth. An answer that is true but not in the handbook, or that contradicts it, does not pass.
+
+## A rubric says what a passing answer must show
+
+Write it as what the answer has to contain. Compare:
+
+- Weak: *"About links."*
+- Strong: *"Names two points: ask a moderator in #help first, and never post a link to a wallet or a claim page."*
+
+The strong one tells a validator, and an applicant, exactly when to stop reading. Rubrics are public once an attempt opens. That is deliberate: the gate tests understanding of the handbook, not secrecy, and a rubric that can be read without being gamed is a good rubric.
+
+## Editing
+
+The owner can change the handbook and the bank at any time with `update_gate`. An edit applies only to attempts opened afterwards. **An open attempt always grades against the version it was dealt**, because the text is copied into the attempt when it opens. Nobody can move the bar under an applicant who has already paid.
+
+## Never ask for personal details
+
+Answers are stored on chain in plain text.
